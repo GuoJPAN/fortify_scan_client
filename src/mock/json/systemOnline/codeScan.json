@@ -1,0 +1,111 @@
+{
+    "code": "200",
+    "msg": "成功！",
+    "data": {
+        "tableData": [
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "www.dskajdlajdladjldjaldajdadljdajdlajdasdadabaidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            },
+            {
+                "id": "22",
+                "modular": "中旅员服",
+                "assembly": "good good study daydayup",
+                "codeUrl": "baidu.com",
+                "branch": "master",
+                "language": "java",
+                "status": "成功",
+                "virusCunt": "100"
+            }
+            
+        ],
+        "currentPage": 2,
+        "totalCount": 30
+    }
+}
