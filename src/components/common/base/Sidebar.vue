@@ -64,63 +64,63 @@ export default {
         {
           icon: 'el-icon-s-promotion',
           index: '2',
-          title: '白盒安全',
+          title: '代码审计',
           subs: [
             {
               index: 'codeScan',
               title: '代码扫描'
             },
-            {
-              index: 'webScan',
-              title: '黑盒扫描'
-            },
-            {
-              index: 'projectDatail',
-              title: '漏洞详情'
-            }
+            // {
+            //   index: 'webScan',
+            //   title: '黑盒扫描'
+            // },
+            // {
+            //   index: 'projectDatail',
+            //   title: '漏洞详情'
+            // }
           ]
         },
-        {
-          icon: 'el-icon-cpu',
-          index: '3',
-          title: '系统管理',
-          subs: [
-            {
-              index: '3-1',
-              title: '组件管理'
-            },
-            {
-              index: '3-2',
-              title: '用户管理'
-            }
-          ]
-        },
-        {
-          icon: 'el-icon-suitcase-1',
-          index: '4',
-          title: '工单管理',
-          subs: [
-            {
-              index: '4-1',
-              title: '手工操作'
-            }
-          ]
-        },
-        {
-          icon: 'el-icon-s-flag',
-          index: '5',
-          title: '帮助中心',
-          subs: [
-            {
-              index: '5-1',
-              title: '操作文档'
-            },
-            {
-              index: '5-2',
-              title: '关于我们'
-            }
-          ]
-        }
+        // {
+        //   icon: 'el-icon-cpu',
+        //   index: '3',
+        //   title: '系统管理',
+        //   subs: [
+        //     {
+        //       index: '3-1',
+        //       title: '组件管理'
+        //     },
+        //     {
+        //       index: '3-2',
+        //       title: '用户管理'
+        //     }
+        //   ]
+        // },
+        // {
+        //   icon: 'el-icon-suitcase-1',
+        //   index: '4',
+        //   title: '工单管理',
+        //   subs: [
+        //     {
+        //       index: '4-1',
+        //       title: '手工操作'
+        //     }
+        //   ]
+        // },
+        // {
+        //   icon: 'el-icon-s-flag',
+        //   index: '5',
+        //   title: '帮助中心',
+        //   subs: [
+        //     {
+        //       index: '5-1',
+        //       title: '操作文档'
+        //     },
+        //     {
+        //       index: '5-2',
+        //       title: '关于我们'
+        //     }
+        //   ]
+        // }
         // {
         //   icon: 'el-icon-lx-home',
         //   index: '5',

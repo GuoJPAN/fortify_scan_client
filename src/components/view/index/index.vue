@@ -2,7 +2,7 @@
   <div class="index-content">
     <div>
       <el-row :gutter="10">
-        <el-col :span="6" v-for="item in 4" :key="item">
+        <el-col :span="6">
           <el-card class="data-card" shadow="never">
             <el-row>
               <el-col :span="4" style="display: flex">
@@ -12,10 +12,70 @@
                 ></i>
               </el-col>
               <el-col :span="20">
-                <div>外发成功率</div>
-                <div>98%</div>
+                <div>代码漏洞总数</div>
+                <div>{{ v_total }}</div>
                 <div>
-                  <span style="color: red">10%</span>
+                  <span style="color: red">{{ v_total }}%</span>
+                  <span>同比上周</span>
+                </div>
+              </el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="data-card" shadow="never">
+            <el-row>
+              <el-col :span="4" style="display: flex">
+                <i
+                  class="el-icon-s-tools"
+                  style="align-self: center; margin-top: 10px"
+                ></i>
+              </el-col>
+              <el-col :span="20">
+                <div>高危漏洞数量</div>
+                <div>{{ v_high_total }}</div>
+                <div>
+                  <span style="color: red">{{ v_total }}%</span>
+                  <span>同比上周</span>
+                </div>
+              </el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="data-card" shadow="never">
+            <el-row>
+              <el-col :span="4" style="display: flex">
+                <i
+                  class="el-icon-s-tools"
+                  style="align-self: center; margin-top: 10px"
+                ></i>
+              </el-col>
+              <el-col :span="20">
+                <div>中危漏洞总数</div>
+                <div>{{ v_mi_total }}</div>
+                <div>
+                  <span style="color: red">{{ v_total }}%</span>
+                  <span>同比上周</span>
+                </div>
+              </el-col>
+            </el-row>
+          </el-card>
+        </el-col>
+        <el-col :span="6">
+          <el-card class="data-card" shadow="never">
+            <el-row>
+              <el-col :span="4" style="display: flex">
+                <i
+                  class="el-icon-s-tools"
+                  style="align-self: center; margin-top: 10px"
+                ></i>
+              </el-col>
+              <el-col :span="20">
+                <div>低危漏洞总数</div>
+                <div>{{ v_low_total }}</div>
+                <div>
+                  <span style="color: red">{{ v_total }}%</span>
                   <span>同比上周</span>
                 </div>
               </el-col>
@@ -26,7 +86,7 @@
       <el-row :gutter="10" style="margin-top: 10px">
         <el-col :span="16">
           <el-card shadow="never">
-            <span style="font-size: 18px">外发成功率走势：</span>
+            <span style="font-size: 18px">漏洞走势：</span>
             <div
               class="myChart"
               style="width: 100%; height: 300px"
@@ -36,7 +96,7 @@
         </el-col>
         <el-col :span="8">
           <el-card shadow="never">
-            <span style="font-size: 18px">月度外发结果分布：</span>
+            <span style="font-size: 18px">漏洞占比：</span>
             <div style="height: 300px">
               <div>
                 <div

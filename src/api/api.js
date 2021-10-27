@@ -3,7 +3,9 @@ import axios from 'axios'
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 let host = "/api"
-// let host = "localhost:8000/api"
+    // let host = "localhost:8000/api"
+    // 打包
+    // let host = ""
 
 // 获取主页信息
 
@@ -42,6 +44,9 @@ export const gitStartScan = params => { return axios.post(`${host}/startGitScan`
 
 // 获取扫描任务结果详情
 export const projectDatail = params => { return axios.post(`${host}/vDetail`, params) }
+
+// 删除fortify扫描结果
+export const deletePrj = params => { return axios.post(`${host}/deletePrj`, params) }
 
 // 获取单个漏洞id详情
 export const singleVulDetail = params => { return axios.post(`${host}/singleVulDetail`, params) }

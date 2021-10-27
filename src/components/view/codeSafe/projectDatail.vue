@@ -150,7 +150,14 @@
           <div v-highlight>
             <pre v-highlight><code v-html="vulDetail.Snippet"></code></pre>
           </div>
-
+          <div class="vlabel">漏洞描述:</div>
+          <div v-highlight>
+            <pre v-highlight><code v-html="vulDetail.describe"></code></pre>
+          </div>
+          <div class="vlabel">修复建议:</div>
+          <div v-highlight>
+            <pre v-highlight><code v-html="vulDetail.Recommendation"></code></pre>
+          </div>
           <div class="vlabel">后缀名:</div>
           <div>{{ vulDetail.extend }}</div>
 
@@ -204,19 +211,30 @@ export default {
         this.loading = false
       }).catch()
     },
+    // 初始化表格索引
     getCellIndex: function ({ row, column, rowIndex, columnIndex }) {
       row.index = rowIndex
       column.index = columnIndex
     },
+    // 设置表字段样式，绑定方法
     cellClick (row, column, cell, event) {
       //   console.log(row, column.index, cell, event)
       console.log(column)
       console.log(row.vtoken)
       if (column.index === 0) {
         var data = { "projectID": this.projectID, "vtoken": row.vtoken }
+        // 获取到数据之前显示加载按钮
+        const loading = this.$loading({
+          lock: true,
+          text: '拼命获取数据中请稍后...',
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.7)'
+        })
+
         this.http.singleVulDetail(data).then(res => {
           this.vulDetail = res.data.data[0]
           this.drawer = true
+          loading.close()
         }).catch()
       }
     },
@@ -240,7 +258,11 @@ export default {
       this.$refs.filterTable.clearFilter()
     },
     comeback () {
-      this.$router.push({ path: "/projectDatail" })
+      this.$message({
+        message: '回不去了...',
+        type: 'success'
+      })
+      //   this.$router.push({ path: "/projectDatail" })
     },
     onSubmit () {
       this.$message({
