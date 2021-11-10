@@ -1,22 +1,20 @@
 <template>
-    <div class="header">
-        <div class="logo">
-          <img src="../../../assets/logo.png" />
-          <span>
-            安全管理系统
-          </span>
-        </div>
+  <div class="header">
+    <div class="logo">
+      <img src="../../../assets/logo.png" />
+      <span> 安全管理系统 </span>
+    </div>
 
-        <div class="header-right">
-            <div class="header-user-con">
-                <!-- 全屏显示 -->
-                <!-- <div class="btn-fullscreen" @click="handleFullScreen">
+    <div class="header-right">
+      <div class="header-user-con">
+        <!-- 全屏显示 -->
+        <!-- <div class="btn-fullscreen" @click="handleFullScreen">
                     <el-tooltip effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
                         <i class="el-icon-rank"></i>
                     </el-tooltip>
                 </div> -->
-                <!-- 消息中心 -->
-                <!-- <div class="btn-bell">
+        <!-- 消息中心 -->
+        <!-- <div class="btn-bell">
                     <el-tooltip
                         effect="dark"
                         :content="message?`有${message}条未读消息`:`消息中心`"
@@ -28,23 +26,23 @@
                     </el-tooltip>
                     <span class="btn-bell-badge" v-if="message"></span>
                 </div> -->
-                <!-- 用户头像 -->
-                <div class="user-avator">
-                    <img src="../../../assets/img/dnf/mofashi.png" />
-                </div>
-                <!-- 用户名下拉菜单 -->
-                <el-dropdown class="user-name" trigger="click" @command="handleCommand">
-                    <span class="el-dropdown-link">
-                        {{username}}
-                        <i class="el-icon-caret-bottom"></i>
-                    </span>
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item divided command="loginout">注销</el-dropdown-item>
-                    </el-dropdown-menu>
-                </el-dropdown>
-            </div>
+        <!-- 用户头像 -->
+        <div class="user-avator">
+          <img src="../../../assets/img/img.jpg" />
         </div>
+        <!-- 用户名下拉菜单 -->
+        <el-dropdown class="user-name" trigger="click" @command="handleCommand">
+          <span class="el-dropdown-link">
+            {{ username }}
+            <i class="el-icon-caret-bottom"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item divided command="logout">注销</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 // import bus from './bus'
@@ -66,8 +64,22 @@ export default {
   methods: {
     // 用户名下拉菜单选择事件
     handleCommand (command) {
-      if (command === 'loginout') {
-        console.log("注销登录！")
+      if (command === 'logout') {
+        this.http.logout().then(res => {
+          if (res.data.status === 401) {
+            this.$message({
+              message: res.data.msg,
+              type: 'success'
+            })
+            this.$router.push("/login")
+          } else {
+            this.$message({
+              message: res.data.msg,
+              type: 'error'
+            })
+          }
+        }).catch(
+        )
       }
     },
     // 全屏事件
@@ -107,68 +119,68 @@ export default {
 </script>
 <style scoped>
 .header {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    height: 60px;
-    font-size: 18px;
-    color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: #fff;
 }
 
 .header .logo {
-    float: left;
-    width: 350px;
-    line-height: 60px;
+  float: left;
+  width: 350px;
+  line-height: 60px;
 }
 .header-right {
-    float: right;
-    padding-right: 50px;
+  float: right;
+  padding-right: 50px;
 }
 .header-user-con {
-    display: flex;
-    height: 60px;
-    align-items: center;
+  display: flex;
+  height: 60px;
+  align-items: center;
 }
 .btn-fullscreen {
-    transform: rotate(45deg);
-    margin-right: 5px;
-    font-size: 24px;
+  transform: rotate(45deg);
+  margin-right: 5px;
+  font-size: 24px;
 }
 .btn-bell,
 .btn-fullscreen {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    border-radius: 15px;
-    cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
 }
 .btn-bell-badge {
-    position: absolute;
-    right: 0;
-    top: -2px;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background: #f56c6c;
-    color: #fff;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #f56c6c;
+  color: #fff;
 }
 .btn-bell .el-icon-bell {
-    color: #fff;
+  color: #fff;
 }
 .user-name {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 .user-avator {
-    margin-left: 20px;
+  margin-left: 20px;
 }
-.user-avator img{
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.user-avator img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
-.logo  img{
+.logo img {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -176,14 +188,14 @@ export default {
   top: 10px;
   margin-left: 15px;
 }
-.logo span{
+.logo span {
   margin-left: 70px;
 }
 .el-dropdown-link {
-    color: #fff;
-    cursor: pointer;
+  color: #fff;
+  cursor: pointer;
 }
 .el-dropdown-menu__item {
-    text-align: center;
+  text-align: center;
 }
 </style>

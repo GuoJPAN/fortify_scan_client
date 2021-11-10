@@ -80,6 +80,17 @@ export default {
             // }
           ]
         },
+        {
+          icon: 'el-icon-s-promotion',
+          index: 'doc',
+          title: '个人知识库',
+        //   subs: [
+        //     {
+        //       index: 'codeScan',
+        //       title: '代码扫描'
+        //     }
+        //   ]
+        },
         // {
         //   icon: 'el-icon-cpu',
         //   index: '3',

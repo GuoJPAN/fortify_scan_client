@@ -1,15 +1,39 @@
 import axios from 'axios'
+import router from '../router/index'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.interceptors.response.use(
+    response => {
+        // 未登录或会话已过期
+        console.log(response.data)
+        if (401 === response.data.status) {
+            // 重定向到登录页
+            console.log(1)
+            router.replace({
+                path: '/login',
+                query: { redirect: router.currentRoute.fullPath }
+            })
+        }
+        return response;
+    },
+    error => {
+        if (500 === error.response.status) {
+            // 服务端异常  
+        }
+        return Promise.reject(error) // 返回接口返回的错误信息
+    }
+);
 
 let host = "/api"
     // let host = "localhost:8000/api"
     // 打包
     // let host = ""
 
-// 获取主页信息
+// 登录
+export const login = params => { return axios.post(`${host}/login`, params) }
 
-export const getindex = params => { return axios.get(`${host}/index/`, { params: params }) }
+// 登录
+export const logout = params => { return axios.post(`${host}/logout`, params) }
 
 // 获取城市信息
 
